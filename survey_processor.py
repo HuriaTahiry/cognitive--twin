@@ -5,7 +5,6 @@ import numpy as np
 
 nlp = spacy.load("en_core_web_sm")
 
-# gnderize.io
 def extract_gender(name):
     try:
         first_name = name.split()[0]
@@ -42,8 +41,7 @@ def sentiment_keywords(text):
 
 
 
-# وصل
-# Mapping scent notes to neurotransmitters
+
 scent_to_neuro = {
     "vanilla": "oxytocin",
     "mint": "serotonin",
@@ -55,7 +53,6 @@ scent_to_neuro = {
     "bergamot": "serotonin"
 }
 
-# Simulate scent note extraction (later can be replaced with real Fragrantica scraping/API)
 def map_scent_to_neuro(scent_name):
     scent_notes = []
 
@@ -71,16 +68,16 @@ def map_scent_to_neuro(scent_name):
     elif "cinnamon" in scent_name:
         scent_notes = ["cinnamon"]
 
-    # Map scent notes to neurotransmitters
+
     neuro_map = {}
     for note in scent_notes:
         neuro = scent_to_neuro.get(note)
         if neuro:
-            neuro_map[neuro] = neuro_map.get(neuro, 0) + 0.4  # baseline weight
+            neuro_map[neuro] = neuro_map.get(neuro, 0) + 0.4  
 
     return neuro_map
 
-# Childhood scent memory → emotional & memory link
+
 def analyze_childhood_scent_memory(memory_text):
     memory_notes = []
 
@@ -92,12 +89,12 @@ def analyze_childhood_scent_memory(memory_text):
     if "flowers" in memory_text or "roses" in memory_text:
         memory_notes = ["lavender"]
 
-    # Map memory scents to neurotransmitter
+
     neuro_map = {}
     for note in memory_notes:
         neuro = scent_to_neuro.get(note)
         if neuro:
-            neuro_map[neuro] = neuro_map.get(neuro, 0) + 0.5  # stronger effect from memory
+            neuro_map[neuro] = neuro_map.get(neuro, 0) + 0.5  
 
     return neuro_map
 
@@ -105,7 +102,7 @@ def analyze_childhood_scent_memory(memory_text):
 
 
 
-# Create vector from neurotransmitter weights
+
 def neurotransmitter_vector(profile):
     neurotransmitters = ["dopamine", "serotonin", "oxytocin", "gaba", "cortisol"]
     vector = []
@@ -120,11 +117,11 @@ def neurotransmitter_vector(profile):
     return np.array([vector], dtype='float32')
 
 
-# Merge all analysis functions into one twin builder
+
 def build_cognitive_twin(data):
     profile = {}
 
-    # Extract individual cognitive components
+
     profile["gender"] = extract_gender(data.get("name", ""))
     profile["profession_stress"] = infer_profession_stress(data.get("job_title", ""))
     profile["routine_effects"] = analyze_routine(data.get("daily_routine", ""))
