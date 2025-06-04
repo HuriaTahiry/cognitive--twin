@@ -35,7 +35,6 @@ sample_input = {
     "childhood_scent_memory": "The smell of rain on wood always reminded me of home."
 }
 
-# Build profile and convert to vector
 profile = build_cognitive_twin(sample_input)
 vector = neurotransmitter_vector(profile)
 
