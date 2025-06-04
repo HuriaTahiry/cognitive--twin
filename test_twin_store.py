@@ -1,7 +1,7 @@
 from twin_store import TwinStore
 from survey_processor import build_cognitive_twin, neurotransmitter_vector
 
-# Sample input
+
 input_1 = {
     "name": "Alejandro Ruiz",
     "job_title": "Software Engineer",
@@ -20,17 +20,17 @@ input_2 = {
     "childhood_scent_memory": "Baking cookies with my grandmother every Sunday."
 }
 
-# Initialize the store
+
 store = TwinStore()
 
-# Add both twins
+
 uuid1, vec1 = store.add_twin(input_1)
 uuid2, vec2 = store.add_twin(input_2)
 
 print(f"Added twin 1: {uuid1}")
 print(f"Added twin 2: {uuid2}")
 
-# Search similar to Alejandro
+
 print("\nTop similar twins to Alejandro:")
 results = store.search_similar(vec1)
 for r in results:
