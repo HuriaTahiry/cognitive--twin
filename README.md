@@ -12,8 +12,6 @@ This project builds cognitive and emotional profiles of users based on demograph
 
 ## Getting Started
 
-### 1. Clone the repo:
-```bash
-git clone https://github.com/your-username/cognitive-twin.git
-cd cognitive-twin
+### 1. Clone the repo: ### 🔗 GitHub Repository
+[github.com/HuriaTahiry/cognitive--twin](https://cognitive--twin-oebpamxvvkmp8rvg2u4uat.streamlit.app/)
 
