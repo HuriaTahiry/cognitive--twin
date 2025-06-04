@@ -7,7 +7,7 @@ st.title(" Cognitive Twin Builder")
 
 st.markdown("Fill in the form below to generate your cognitive twin and find similar ones.")
 
-# --- Form ---
+
 with st.form("twin_form"):
     name = st.text_input("Full Name")
     email = st.text_input("Email Address")
@@ -18,7 +18,7 @@ with st.form("twin_form"):
     memory = st.text_area("Describe a childhood memory associated with scent")
     submitted = st.form_submit_button("Generate Cognitive Twin")
 
-# --- On Submit ---
+
 if submitted:
     payload = {
         "name": name,
@@ -30,7 +30,7 @@ if submitted:
         "childhood_scent_memory": memory
     }
 
-    # POST to Flask API
+
     try:
         create_res = requests.post("http://127.0.0.1:8000/create_twin", json=payload)
         search_res = requests.post("http://127.0.0.1:8000/search_similar", json=payload)
